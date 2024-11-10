@@ -1,5 +1,4 @@
-import 'dart:io';
-
+import 'package:platform/platform.dart';
 import 'package:recase/recase.dart';
 import 'package:secret_manager/secret_manager.dart';
 
@@ -10,14 +9,17 @@ class EnvironmentSecretManager implements SecretManager {
   /// {@macro environment_secret_manager}
   const EnvironmentSecretManager({
     this.caseType = Case.original,
-  });
+    Platform? platform,
+  }) : _platform = platform ?? const LocalPlatform();
 
   /// The format the secret name is saved as
   final Case caseType;
 
+  final Platform _platform;
+
   @override
   String getSecret(String name, {String version = 'latest'}) {
-    final secret = Platform.environment[name];
+    final secret = _platform.environment[name];
     if (secret == null) {
       throw StateError('Secret not found');
     }
