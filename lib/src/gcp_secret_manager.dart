@@ -9,7 +9,7 @@ import 'package:secret_manager/secret_manager.dart';
 /// {@template secret_manager}
 /// A [SecretManager] that uses Google Cloud Secret Manager.
 /// {@endtemplate}
-class GCPSecretManager implements SecretManager{
+class GCPSecretManager implements SecretManager {
   /// {@macro secret_manager}
   const GCPSecretManager(this._secretManagerApi, this._projectId);
 
@@ -34,7 +34,6 @@ class GCPSecretManager implements SecretManager{
 
   final SecretManagerApi _secretManagerApi;
   final String _projectId;
-
 
   @override
   Future<String> getSecret(String name, {String version = 'latest'}) async {

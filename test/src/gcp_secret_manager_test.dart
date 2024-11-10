@@ -2,11 +2,11 @@
 import 'dart:convert';
 
 import 'package:current_gcp_project/current_gcp_project.dart';
-import 'package:secret_manager/secret_manager.dart';
 import 'package:googleapis/secretmanager/v1.dart';
 import 'package:googleapis_auth/googleapis_auth.dart';
 import 'package:http/http.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:secret_manager/secret_manager.dart';
 import 'package:test/test.dart';
 
 class MockSecretManagerApi extends Mock implements SecretManagerApi {}

@@ -1,6 +1,4 @@
-
 import 'dart:io';
-
 
 import 'package:recase/recase.dart';
 import 'package:secret_manager/secret_manager.dart';
@@ -15,17 +13,16 @@ class EnvironmentSecretManager implements SecretManager {
   });
 
   /// The format the secret name is saved as
-   final Case caseType;
+  final Case caseType;
 
   @override
   String getSecret(String name, {String version = 'latest'}) {
     final secret = Platform.environment[name];
-     if (secret == null) {
+    if (secret == null) {
       throw StateError('Secret not found');
     }
     return secret;
   }
-
 }
 
 /// The case type to use when converting a [String] to the appropriate case.
