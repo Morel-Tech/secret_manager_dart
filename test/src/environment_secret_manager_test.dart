@@ -10,7 +10,6 @@ void main() {
       expect(const EnvironmentSecretManager(), isA<EnvironmentSecretManager>());
     });
 
-
     group('getSecret', () {
       test('returns the secret if present', () async {
         final secretManager = EnvironmentSecretManager(
@@ -19,7 +18,7 @@ void main() {
         expect(secretManager.getSecret('key'), 'value');
       });
       test('throws a state error if secret not present', () async {
-         final secretManager = EnvironmentSecretManager(
+        final secretManager = EnvironmentSecretManager(
           platform: FakePlatform.fromJson(jsonEncode({'key': 'value'})),
         );
         await expectLater(
