@@ -3,7 +3,7 @@
 import 'package:secret_manager/secret_manager.dart';
 
 void main() async {
-  final secretManager = await GCPSecretManager.defaultCredentials();
-  final secret = await secretManager.getSecret('my-secret');
+  const secretManager = EnvironmentSecretManager();
+  final secret = secretManager.getSecret('my-secret');
   // use secret...
 }
