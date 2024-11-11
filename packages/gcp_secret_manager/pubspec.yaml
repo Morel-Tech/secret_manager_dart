@@ -1,10 +1,10 @@
 name: gcp_secret_manager
 description: A secret manager that pulls values from GCP Secret Manager.
-version: 1.0.0-dev.1
+version: 1.0.0
 homepage: https://github.com/Morel-Tech/gcp_secret_manager
 
 environment:
-  sdk: ">=2.17.0 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   current_gcp_project: ^0.0.1
