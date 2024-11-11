@@ -1,4 +1,9 @@
+## 1.0.0-dev.1
+
+**Breaking Change** - The base functionality of this package has been separated into a new package called (secret_manager)[https://pub.dev/packages/secret_manager]. Thus, the primary object in this package was renamed from [SecretManager] to [GCPSecretManager].
+
 ## 0.1.4
+
 Bumped dependencies
 
 ## 0.1.3

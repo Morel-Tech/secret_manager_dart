@@ -1,5 +1,5 @@
 name: gcp_secret_manager
-description: A small package to make interacting with Google Secret Manager easier.
+description: A secret manager that pulls values from GCP Secret Manager.
 version: 0.1.4
 homepage: https://github.com/Morel-Tech/gcp_secret_manager
 
@@ -19,5 +19,5 @@ dev_dependencies:
   very_good_analysis: ^5.0.0+1
 
 dependency_overrides:
-  secret_manager: 
+  secret_manager:
     path: ../secret_manager

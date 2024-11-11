@@ -4,22 +4,12 @@
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
 
-A small package to make interacting with Google Secret Manager easier.
+A secret manager that pulls values from GCP Secret Manager.
 
 ## Usage
 
 ```dart
   final secretManager = await SecretManager.defaultCredentials();
-  final secret = await secretManager.getSecret('my-secret');
-  // use secret...
-```
-
-### Local Usage
-
-You can use `LocalSecretManager` to read secrets from a file for use locally. Just make sure you don't check your secrets file into GitHub!
-
-```dart
-  final secretManager = await LocalSecretManager.fromFile();
   final secret = await secretManager.getSecret('my-secret');
   // use secret...
 ```

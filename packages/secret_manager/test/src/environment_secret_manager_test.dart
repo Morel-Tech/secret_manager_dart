@@ -1,26 +1,31 @@
-import 'dart:convert';
-
+import 'package:mocktail/mocktail.dart';
 import 'package:platform/platform.dart';
 import 'package:secret_manager/secret_manager.dart';
 import 'package:test/test.dart';
 
+class _MockPlatform extends Mock implements Platform {}
+
 void main() {
   group('EnvironmentSecretManager', () {
+    late Platform platform;
+
+    setUp(() {
+      platform = _MockPlatform();
+    });
+
     test('can be created', () {
       expect(const EnvironmentSecretManager(), isA<EnvironmentSecretManager>());
     });
 
     group('getSecret', () {
       test('returns the secret if present', () async {
-        final secretManager = EnvironmentSecretManager(
-          platform: FakePlatform.fromJson(jsonEncode({'key': 'value'})),
-        );
+        when(() => platform.environment).thenReturn({'key': 'value'});
+        final secretManager = EnvironmentSecretManager(platform: platform);
         expect(secretManager.getSecret('key'), 'value');
       });
       test('throws a state error if secret not present', () async {
-        final secretManager = EnvironmentSecretManager(
-          platform: FakePlatform.fromJson(jsonEncode({'key': 'value'})),
-        );
+        when(() => platform.environment).thenReturn({});
+        final secretManager = EnvironmentSecretManager(platform: platform);
         await expectLater(
           () async => secretManager.getSecret('key'),
           throwsA(isA<StateError>()),
