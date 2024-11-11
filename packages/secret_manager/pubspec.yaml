@@ -1,8 +1,8 @@
 name: secret_manager
 description: Access your secrets no matter where they're stored.
 version: 0.0.1-dev.1
-homepage: https://github.com/Morel-Tech/secret_manager_dart
-repository: https://github.com/Morel-Tech/secret_manager_dart
+homepage: https://github.com/Morel-Tech/secret_manager_dart/tree/main/packages/secret_manager
+repository: https://github.com/Morel-Tech/secret_manager_dart/tree/main/packages/secret_manager
 issue_tracker: https://github.com/Morel-Tech/secret_manager_dart/issues
 
 environment:

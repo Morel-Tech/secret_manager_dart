@@ -1,6 +1,6 @@
 # Secret Manager
 
-[![secret_manager](https://github.com/Morel-Tech/secret_manager/actions/workflows/secret_manager.yaml/badge.svg?branch=main&event=push)](https://github.com/Morel-Tech/secret_manager/actions/workflows/secret_manager.yaml)
+[![secret_manager](https://github.com/Morel-Tech/secret_manager/actions/workflows/secret_manager_verify_and_test.yaml/badge.svg?branch=main&event=push)](https://github.com/Morel-Tech/secret_manager/actions/workflows/secret_manager_verify_and_test.yaml)
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
 
@@ -8,7 +8,8 @@ Access your secrets no matter where they're stored. Built in support for reading
 
 - Environment variables
 - A local File
-- Google Cloud Secret Manager
+
+If you'd like to read from GCP Secret Manager, you can use [gcp_secret_manager](https://pub.dev/packages/gcp_secret_manager).
 
 ## Environment Variables
 
