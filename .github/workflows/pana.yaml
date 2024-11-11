@@ -18,11 +18,12 @@ jobs:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/pana.yml@v1
     name: Pana Secret Manager
     with:
-      min_score: 95
+      min_score: 150
       working_directory: packages/secret_manager
+
   gcp_secret_manager:
     uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/pana.yml@v1
     name: Pana GCP Secret Manager
     with:
-      min_score: 95
+      min_score: 140
       working_directory: packages/gcp_secret_manager
