@@ -9,7 +9,8 @@
     "mocktail",
     "pana",
     "pubspec",
-    "recase"
+    "recase",
+    "secretmanager"
   ],
   "ignoreWords": [],
   "import": []

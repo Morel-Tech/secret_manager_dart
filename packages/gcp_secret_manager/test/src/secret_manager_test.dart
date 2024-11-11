@@ -2,7 +2,7 @@
 import 'dart:convert';
 
 import 'package:current_gcp_project/current_gcp_project.dart';
-import 'package:secret_manager/secret_manager.dart';
+import 'package:gcp_secret_manager/gcp_secret_manager.dart';
 import 'package:googleapis/secretmanager/v1.dart';
 import 'package:googleapis_auth/googleapis_auth.dart';
 import 'package:http/http.dart';
@@ -94,7 +94,7 @@ void main() {
             }) async =>
                 MockAutoRefreshingAuthClient(),
           ),
-          isA<SecretManager>(),
+          isA<GCPSecretManager>(),
         );
       });
     });

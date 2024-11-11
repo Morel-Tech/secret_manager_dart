@@ -49,7 +49,7 @@ class LocalSecretManager implements SecretManager {
   final Map<String, String> _secrets;
 
   @override
-  String getSecret(String name, {String version = 'latest'})  {
+  String getSecret(String name, {String version = 'latest'}) {
     final secret = _secrets[name];
     if (secret == null) {
       throw StateError('Secret not found');

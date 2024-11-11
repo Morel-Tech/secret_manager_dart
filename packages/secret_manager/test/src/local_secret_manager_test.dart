@@ -18,11 +18,11 @@ void main() {
         final secretManager =
             await LocalSecretManager.fromFile('test/secrets.txt');
         expect(
-          await secretManager.getSecret('testing_key'),
+          secretManager.getSecret('testing_key'),
           'testing_value',
         );
         expect(
-          await secretManager.getSecret('test_with_equals'),
+          secretManager.getSecret('test_with_equals'),
           'testing=test=',
         );
       });
@@ -31,7 +31,7 @@ void main() {
     group('getSecret', () {
       test('returns the secret if present', () async {
         const secretManager = LocalSecretManager({'key': 'value'});
-        expect(await secretManager.getSecret('key'), 'value');
+        expect(secretManager.getSecret('key'), 'value');
       });
       test('throws a state error if secret not present', () async {
         const secretManager = LocalSecretManager({});

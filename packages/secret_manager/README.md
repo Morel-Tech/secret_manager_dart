@@ -5,6 +5,7 @@
 [![License: MIT][license_badge]][license_link]
 
 Access your secrets no matter where they're stored. Built in support for reading secrets from:
+
 - Environment variables
 - A local File
 - Google Cloud Secret Manager
@@ -26,15 +27,6 @@ Just make sure you don't check your secrets file into version control!
   final secret = secretManager.getSecret('my-secret');
   // use secret...
 ```
-
-## GCP Secret Manager
-
-```dart
-  final secretManager = await SecretManager.defaultCredentials();
-  final secret = await secretManager.getSecret('my-secret');
-  // use secret...
-```
-
 
 [license_badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license_link]: https://opensource.org/licenses/MIT
