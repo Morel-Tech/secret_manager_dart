@@ -1,6 +1,6 @@
 # Secret Manager
 
-[![secret_manager](https://github.com/Morel-Tech/secret_manager/actions/workflows/secret_manager_verify_and_test.yaml/badge.svg?branch=main&event=push)](https://github.com/Morel-Tech/secret_manager/actions/workflows/secret_manager_verify_and_test.yaml)
+[![secret_manager](https://github.com/Morel-Tech/secret_manager_dart/actions/workflows/secret_manager_verify_and_test.yaml/badge.svg?branch=main&event=push)](https://github.com/Morel-Tech/secret_manager_dart/actions/workflows/secret_manager_verify_and_test.yaml)
 [![style: very good analysis][very_good_analysis_badge]][very_good_analysis_link]
 [![License: MIT][license_badge]][license_link]
 
