@@ -33,4 +33,27 @@ void main() {
       });
     });
   });
+
+  group('Case', () {
+    group('convert', () {
+      test('original', () {
+        expect(Case.original.convert('test value'), equals('test value'));
+      });
+      test('snake', () {
+        expect(Case.snake.convert('test value'), equals('test_value'));
+      });
+      test('pascal', () {
+        expect(Case.pascal.convert('test value'), equals('TestValue'));
+      });
+      test('camel', () {
+        expect(Case.camel.convert('test value'), equals('testValue'));
+      });
+      test('param', () {
+        expect(Case.param.convert('test value'), equals('test-value'));
+      });
+      test('dot', () {
+        expect(Case.dot.convert('test value'), equals('test.value'));
+      });
+    });
+  });
 }
