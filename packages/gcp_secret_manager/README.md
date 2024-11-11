@@ -1,4 +1,4 @@
-# secret_manager
+# gcp_secret_manager
 
 [![secret_manager][ci_badge]][ci_link]
 [![coverage][coverage_badge]][ci_link]

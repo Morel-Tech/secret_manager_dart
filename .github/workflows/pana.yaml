@@ -1,0 +1,29 @@
+name: Pana
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - main
+
+jobs:
+  secret_manager:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/pana.yml@v1
+    name: Pana Secret Manager
+    with:
+      min_score: 150
+      working_directory: packages/secret_manager
+
+  gcp_secret_manager:
+    uses: VeryGoodOpenSource/very_good_workflows/.github/workflows/pana.yml@v1
+    name: Pana GCP Secret Manager
+    with:
+      min_score: 140
+      working_directory: packages/gcp_secret_manager
