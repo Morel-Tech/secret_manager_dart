@@ -11,7 +11,7 @@ A secret manager that pulls values from GCP Secret Manager.
 ## Usage
 
 ```dart
-  final secretManager = await SecretManager.defaultCredentials();
+  final secretManager = await GCPSecretManager.defaultCredentials();
   final secret = await secretManager.getSecret('my-secret');
   // use secret...
 ```
