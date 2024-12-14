@@ -1,6 +1,6 @@
 name: secret_manager
 description: Access your secrets no matter where they're stored.
-version: 1.0.0
+version: 1.1.0
 homepage: https://github.com/Morel-Tech/secret_manager_dart/tree/main/packages/secret_manager
 repository: https://github.com/Morel-Tech/secret_manager_dart/tree/main/packages/secret_manager
 issue_tracker: https://github.com/Morel-Tech/secret_manager_dart/issues
@@ -10,7 +10,6 @@ environment:
 
 dependencies:
   platform: ^3.1.6
-  recase: ^4.1.0
 
 dev_dependencies:
   mocktail: ^1.0.4

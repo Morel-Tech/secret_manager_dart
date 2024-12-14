@@ -32,27 +32,27 @@ void main() {
         );
       });
     });
-  });
 
-  group('Case', () {
-    group('convert', () {
-      test('original', () {
-        expect(Case.original.convert('test value'), equals('test value'));
+    group('getSecret with nameTransform', () {
+      test('returns the secret if present', () async {
+        when(() => platform.environment)
+            .thenReturn({'transformed_key': 'value'});
+        final secretManager = EnvironmentSecretManager(
+          platform: platform,
+          nameTransform: (name) => 'transformed_$name',
+        );
+        expect(secretManager.getSecret('key'), 'value');
       });
-      test('snake', () {
-        expect(Case.snake.convert('test value'), equals('test_value'));
-      });
-      test('pascal', () {
-        expect(Case.pascal.convert('test value'), equals('TestValue'));
-      });
-      test('camel', () {
-        expect(Case.camel.convert('test value'), equals('testValue'));
-      });
-      test('param', () {
-        expect(Case.param.convert('test value'), equals('test-value'));
-      });
-      test('dot', () {
-        expect(Case.dot.convert('test value'), equals('test.value'));
+      test('throws a state error if secret not present', () async {
+        when(() => platform.environment).thenReturn({});
+        final secretManager = EnvironmentSecretManager(
+          platform: platform,
+          nameTransform: (name) => 'transformed_$name',
+        );
+        await expectLater(
+          () async => secretManager.getSecret('key'),
+          throwsA(isA<StateError>()),
+        );
       });
     });
   });
